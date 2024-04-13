@@ -11,6 +11,7 @@ import { v2 as cloudinary } from "cloudinary";
 //routers
 import userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
+import myHotelsRoutes from "./routes/my-hotels";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -43,6 +44,7 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 //routes middleware
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/my-hotels", myHotelsRoutes);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
