@@ -1,9 +1,9 @@
 import { FormProvider, useForm } from "react-hook-form";
-// import DetailsSection from "./DetailsSection";
-// import TypeSection from "./TypeSection";
-// import FacilitiesSection from "./FacilitiesSection";
-// import GuestsSection from "./GuestsSection";
-// import ImagesSection from "./ImagesSection";
+import DetailsSection from "./DetailsSection";
+import TypeSection from "./TypeSection";
+import FacilitiesSection from "./FacilitiesSection";
+import GuestSection from "./GuestSection";
+import ImagesSection from "./ImagesSection";
 import { HotelType } from "../../../../backend/src/shared/types";
 import { useEffect } from "react";
 
@@ -71,11 +71,11 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
   return (
     <FormProvider {...formMethods}>
       <form className="flex flex-col gap-10" onSubmit={onSubmit}>
-        {/* <DetailsSection />
+        <DetailsSection />
         <TypeSection />
         <FacilitiesSection />
-        <GuestsSection />
-        <ImagesSection /> */}
+        <GuestSection />
+        <ImagesSection />
         <span className="flex justify-end">
           <button
             disabled={isLoading}
