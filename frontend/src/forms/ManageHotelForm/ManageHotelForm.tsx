@@ -37,6 +37,7 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
   }, [hotel, reset]);
 
   const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
+    console.log(formDataJson);
     const formData = new FormData();
     if (hotel) {
       formData.append("hotelId", hotel._id);
@@ -44,7 +45,7 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
     formData.append("name", formDataJson.name);
     formData.append("city", formDataJson.city);
     formData.append("country", formDataJson.country);
-    formData.append("description", formDataJson.description);
+    formData.append("descrption", formDataJson.description);
     formData.append("type", formDataJson.type);
     formData.append("pricePerNight", formDataJson.pricePerNight.toString());
     formData.append("starRating", formDataJson.starRating.toString());
