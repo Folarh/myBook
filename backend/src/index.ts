@@ -5,7 +5,7 @@ import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import path from "path";
+// import path from "path";
 import { v2 as cloudinary } from "cloudinary";
 
 //routers
@@ -39,14 +39,14 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+// app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 //routes middleware
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelsRoutes);
 
-app.use("*", (req, res) => {
+app.use("*", (req: Request, res: Response) => {
   res.status(404).json({ msg: "not found" });
 });
 
